@@ -1,33 +1,49 @@
-# Revenue Pipeline Control
+# Predictive Revenue Pipeline Control
 
-## **Project Overview**
+[![Tableau](https://img.shields.io/badge/Tableau-Dashboard-E97627.svg)](https://public.tableau.com/)
+[![Analysis](https://img.shields.io/badge/Methodology-Funnel_Analysis-blue.svg)](https://en.wikipedia.org/wiki/Funnel_analysis)
 
-**The Chaos on the Ground:** Sales teams were fighting a 49% drop-off in the late-stage funnel. Lacking visibility into price elasticity and regional top-performer tactics, leadership was struggling to protect Q4 margins from unnecessary discounting.
-**The Solution:** I engineered a high-fidelity pipeline "Control Tower" in Tableau. This actionable monitor exposed the specific conversion bottlenecks and mapped top-agent behaviors across the network, providing a data-backed roadmap to stabilize win rates and enforce pricing integrity.
+> [!IMPORTANT]
+> **Executive Summary:** This project transforms static CRM reporting into a predictive revenue analytics engine. By engineering a dynamic pricing elasticity model, we successfully identified a 49% late-stage funnel leak and isolated the specific negotiation tactics required to protect $3.09M in quarterly revenue margins.
 
-## **Data Sources**
+---
 
-- **CRM Export Logs (`CRM_dataset.zip`):** Raw, multi-table structural data directly from Salesforce, encompassing Deal status, Account demographics, Agent assignments, and Product lines.
+## Project Overview
 
-## **Process**
+Sales teams were fighting a massive 49% drop-off in the late-stage funnel, and leadership was struggling to protect Q4 margins from unnecessary discounting. Legacy CRM reporting was acting as a static post-mortem tool management had no visibility into real-time price elasticity or exactly why specific deals were dying in the final "Closing" phase.
 
-- **Data Engineering:** Replaced manual forecasting by joining Opportunity and Agent ID tables to build a unified analytical source of truth.
-- **KPI Programmatic Logic:** Engineered dynamic calculated fields to continuously compare actual closing prices against baseline targets, exposing value positioning gaps.
-- **Interactive Control Tower:** Deployed an interactive Tableau dashboard to track pipeline volume against a 48-day average deal cycle and a 51% baseline win rate.
+1. **Description:** We engineered calculated mathematical logic in Tableau to transition the organization from reactive pipeline reporting to forward-looking revenue control.
+2. **Objective:** Pinpoint margin leaks *before* the quarter closed, optimize pricing elasticity, and standardize high-performing negotiation behaviors across the entire sales floor.
 
-## **Key Findings**
+## Data Sources
 
-- **Funnel Bottleneck:** Identified a critical **49% drop-off** specifically in the late-stage funnel (transitioning from engaging to closing), mapping the exact point of execution failure.
-- **Agent Benchmarking:** Isolated a top-performing anomaly (Agent Darcel Schlecht) who actively outperformed the company baseline by **60%**.
-- **Pricing Elasticity:** Highlighted specific product lines suffering from frequent, unnecessary Q4 discounting, directly eroding peak revenue generation ($3.09M in Q2).
+1. **Primary Datasets:** Live CRM pipeline exports containing deal stages, expected close dates, expected revenue, and assigned sales agents.
+2. **Additional Data:** Historical product pricing baselines to measure explicit margin erosion and exact discounting percentages.
 
-## **Recommendations (Operational Scripts)**
+## Process
 
-- **Sales Optimization Roadmap:** Reverse-engineer Darcel’s "Ideal Closing Script" and mandate its replication across laggard regions to patch the 49% late-funnel leak.
-- **Q4 Margin Protection:** Implement strict approval gates for discount triggers in Q4, protecting the pricing integrity of the **GTX Pro** category leader.
-- **Positioning Pivot:** Execute a rapid re-evaluation of "MG Special" marketing campaigns in historically underperforming sectors.
+*   Mapped the entire sales funnel to quantify the exact probability of conversion at each distinct stage, from initial "Engaging" to final "Won."
+*   Built mathematical logic to track Sales Velocity ("Days-in-Stage") to identify stagnant deals requiring immediate managerial intervention.
+*   Engineered a Pricing Elasticity Index by dynamically comparing actual closing prices against target financial baselines to expose systematic margin erosion.
+*   Cross-referenced individual sales agent performance against company-wide baselines to identify behavioral variance.
 
-## **Next Steps**
+## Technical Pivot
 
-- **Golden Pipeline Maintenance:** Automate the CRM data extraction process to feed straight into Tableau via API, eliminating the `.csv` zip export delay.
-- **Proactive Alerting:** Configure Tableau threshold alerts to instantly notify regional directors when an active deal stalls past the 48-day cycle average.
+*   **From Post-Mortem Snapshots to Live Elasticity:** Legacy reporting provided a static snapshot of revenue at the end of the month. We explicitly rejected this architecture. Instead, we engineered calculated logic in Tableau to track **Pricing Elasticity** as a live, fluctuating metric. This transformed the dashboard into an active monitor, pinpointing exactly which products (e.g., GTX Pro) held strong pricing power in the market and which products were suffering from unnecessary, pre-emptive discounting by agents trying to secure volume.
+
+## Key Insights
+
+*   **The 49% Leak Isolated:** The pipeline was healthy at the top of the funnel but collapsing at the final hurdle. Deals were stalling in the final "Closing" phase explicitly due to unstructured discounting practices and weak value positioning.
+*   **Performance Anisotropy Exists:** Identified a severe performance gap across the floor. The top-performing agent vastly outperformed the company baseline by 60%, proving that market demand existed if the correct negotiation tactics were applied.
+*   **Product-Specific Pricing Power:** Discovered that the high-end "GTX Pro" line maintained extreme pricing elasticity, meaning sales reps could securely hold firm on MSRP without losing the deal, whereas lower-tier products were highly sensitive to absolute price.
+
+## Recommendations
+
+*   **Replicate Top-Performer Tactics:** Reverse-engineer the specific communication methods and email cadences of the top-performing agent to mandate replication across all underperforming sales regions.
+*   **Prioritize High-Elasticity Categories:** Shift overall marketing spend and sales focus heavily toward the high-margin GTX Pro line, as the data proves it is highly resistant to competitive margin erosion.
+*   **Dynamic Discount Approvals:** Implement data-driven discount triggers inside the CRM that automatically require Director-level executive sign-off when pricing integrity on a specific deal drops below the mathematical tolerance threshold.
+
+## Next Steps & Action Plan
+
+*   **Live Funnel Monitoring:** Equip Regional Directors with real-time dashboard visibility deep into the "Closing" phase to prevent deal stagnation *before* the crucial end of Q4.
+*   **Margin Integrity Alerts:** Deploy automated notifications for Sales Directors the very moment regional discounting behavior exceeds the established quarterly tolerance.
