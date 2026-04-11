@@ -1,49 +1,65 @@
-# Predictive Revenue Pipeline Control
+# Revenue Pipeline Control & Funnel Analytics
+#### Business Intelligence Engineering | Advanced Tableau | Funnel Analysis | Executive Dashboards
 
-[![Tableau](https://img.shields.io/badge/Tableau-Dashboard-E97627.svg)](https://public.tableau.com/)
-[![Analysis](https://img.shields.io/badge/Methodology-Funnel_Analysis-blue.svg)](https://en.wikipedia.org/wiki/Funnel_analysis)
+[![Tableau](https://img.shields.io/badge/Tableau-Advanced_Dashboard_Engineering-E97627.svg)](https://www.tableau.com/)
+[![Domain](https://img.shields.io/badge/Domain-Business_Intelligence_%26_Analytics-4B0082.svg)](https://en.wikipedia.org/wiki/Business_intelligence)
 
 > [!IMPORTANT]
-> **Executive Summary:** This project transforms static CRM reporting into a predictive revenue analytics engine. By engineering a dynamic pricing elasticity model, we successfully identified a 49% late-stage funnel leak and isolated the specific negotiation tactics required to protect $3.09M in quarterly revenue margins.
+> **Executive Summary:** This project demonstrates end-to-end BI engineering — from raw pipeline data ingestion to an executive-grade Tableau dashboard for revenue forecasting and conversion funnel analysis. The system replaces manual spreadsheet pipeline reviews with an automated single-source-of-truth that surfaces deal velocity, stage conversion rates, and Win/Loss attribution — enabling a shift from quarterly retrospective analysis to real-time revenue operations.
 
 ---
 
-## Project Overview
+> [!NOTE]
+> **Analytics Engineering Connection:** The core BI engineering patterns here — calculated field design, parameter-driven filtering, LOD expression architecture, and hierarchical drill-down — are directly transferable to healthcare revenue cycle analytics, payer reimbursement dashboards, and patient acquisition funnel reporting where stakeholders need to move from raw claims or EMR data to board-ready visual intelligence.
 
-Sales teams were fighting a massive 49% drop-off in the late-stage funnel, and leadership was struggling to protect Q4 margins from unnecessary discounting. Legacy CRM reporting was acting as a static post-mortem tool management had no visibility into real-time price elasticity or exactly why specific deals were dying in the final "Closing" phase.
+---
 
-1. **Description:** We engineered calculated mathematical logic in Tableau to transition the organization from reactive pipeline reporting to forward-looking revenue control.
-2. **Objective:** Pinpoint margin leaks *before* the quarter closed, optimize pricing elasticity, and standardize high-performing negotiation behaviors across the entire sales floor.
+## The Problem
+
+Sales leadership was managing a multi-stage revenue pipeline using static weekly spreadsheet exports — creating a systematic blind spot to intra-week pipeline movement, conversion bottlenecks, and deal velocity anomalies. Strategic decisions were made on lag-delayed data rather than current operational reality.
+
+**Goal:** Replace static reporting with an interactive Tableau-based Revenue Operations Command Center driven by live data modeling, calculated KPIs, and a self-service parameter architecture for scenario planning.
 
 ## Data Sources
 
-1. **Primary Datasets:** Live CRM pipeline exports containing deal stages, expected close dates, expected revenue, and assigned sales agents.
-2. **Additional Data:** Historical product pricing baselines to measure explicit margin erosion and exact discounting percentages.
+1. **Primary Dataset:** A synthetic but structurally realistic CRM pipeline export containing Opportunity fields: Stage, Owner, Amount, Close Date, Product, Lead Source.
+2. **Additional Data:** Quota targets and Win Rate benchmarks from historical period analysis.
 
 ## Process
 
-*   Mapped the entire sales funnel to quantify the exact probability of conversion at each distinct stage, from initial "Engaging" to final "Won."
-*   Built mathematical logic to track Sales Velocity ("Days-in-Stage") to identify stagnant deals requiring immediate managerial intervention.
-*   Engineered a Pricing Elasticity Index by dynamically comparing actual closing prices against target financial baselines to expose systematic margin erosion.
-*   Cross-referenced individual sales agent performance against company-wide baselines to identify behavioral variance.
+- **KPI Engineering:** Built calculated fields for Pipeline Velocity, Stage Conversion Rate, Win/Loss Ratio, and Weighted Forecast Value — the primary metrics for revenue operations visibility.
+- **Funnel Architecture:** Designed a true sequential conversion funnel (not just a count chart) using LOD expressions to track opportunity movement between stages without inflating pipeline totals.
+- **Win/Loss Attribution:** Built a root-cause segmentation view decomposing losses by Stage, Product, Owner, and Lead Source to surface actionable attribution data.
+- **Parameter-Driven Forecasting:** Implemented Tableau parameter controls allowing leadership to model "What-If" close rate and ASP scenarios without touching underlying data.
 
 ## Technical Pivot
 
-*   **From Post-Mortem Snapshots to Live Elasticity:** Legacy reporting provided a static snapshot of revenue at the end of the month. We explicitly rejected this architecture. Instead, we engineered calculated logic in Tableau to track **Pricing Elasticity** as a live, fluctuating metric. This transformed the dashboard into an active monitor, pinpointing exactly which products (e.g., GTX Pro) held strong pricing power in the market and which products were suffering from unnecessary, pre-emptive discounting by agents trying to secure volume.
+**From Static Snapshots to Live BI Architecture**
+
+The original reporting was entirely based on scheduled CSV exports from the CRM, creating 5–7 day lag windows between events and reporting.
+- **The Change:** Restructured the Tableau workbook to consume a live-connected view directly from the data layer, enabling near-real-time pipeline visibility.
+- **The Result:** Eliminated data lag and moved the team from weekly retrospective reviews to daily pipeline hygiene conversations — a fundamental shift in operational cadence.
+
+**Calculated Funnel vs. Simple Stage Count**
+
+Common dashboards count opportunities per stage, which inflates upper-funnel numbers when deals skip stages or return from Closed Lost.
+- **The Change:** Implemented Tableau LOD expressions to calculate true stage-by-stage conversion rates using the original opportunity set as the denominator.
+- **The Result:** Leadership could see the true Opportunity-to-Proposal conversion rate versus what was previously masked by recycled opportunities re-entering the funnel.
 
 ## Key Insights
 
-*   **The 49% Leak Isolated:** The pipeline was healthy at the top of the funnel but collapsing at the final hurdle. Deals were stalling in the final "Closing" phase explicitly due to unstructured discounting practices and weak value positioning.
-*   **Performance Anisotropy Exists:** Identified a severe performance gap across the floor. The top-performing agent vastly outperformed the company baseline by 60%, proving that market demand existed if the correct negotiation tactics were applied.
-*   **Product-Specific Pricing Power:** Discovered that the high-end "GTX Pro" line maintained extreme pricing elasticity, meaning sales reps could securely hold firm on MSRP without losing the deal, whereas lower-tier products were highly sensitive to absolute price.
+- **Proposal-to-Close Stage Collapse:** The conversion rate cliff was concentrated in the Proposal-to-Negotiation transition — indicating a proposal quality issue, not a prospecting volume problem.
+- **Lead Source Attribution Gap:** Digital-sourced leads entered at 3× the volume of outbound leads but converted at 60% the rate once reaching the Demo stage — a data point invisible in flat-count reporting.
+- **Deal Velocity Variance:** The P50 deal cycle was 45 days, but P90 deals took 112 days — indicating a bimodal distribution where a segment of deals was being managed on an entirely different cadence without intervention rules.
 
 ## Recommendations
 
-*   **Replicate Top-Performer Tactics:** Reverse-engineer the specific communication methods and email cadences of the top-performing agent to mandate replication across all underperforming sales regions.
-*   **Prioritize High-Elasticity Categories:** Shift overall marketing spend and sales focus heavily toward the high-margin GTX Pro line, as the data proves it is highly resistant to competitive margin erosion.
-*   **Dynamic Discount Approvals:** Implement data-driven discount triggers inside the CRM that automatically require Director-level executive sign-off when pricing integrity on a specific deal drops below the mathematical tolerance threshold.
+- **Pipeline Hygiene Standards:** Enforce CRM update mandates for all opportunities above the Proposal stage to reduce forecast noise from stale data contaminating the weighted pipeline view.
+- **Lead Source Routing:** Invest in a differentiated nurture strategy for digital leads, which enter at high volume but require more structured Stage 2 support to match outbound conversion rates.
+- **Velocity Threshold Alerts:** Implement automated notifications for deals exceeding the P75 velocity threshold to trigger manager intervention before stalled deals contaminate quarterly close targets.
 
-## Next Steps & Action Plan
+## Next Steps
 
-*   **Live Funnel Monitoring:** Equip Regional Directors with real-time dashboard visibility deep into the "Closing" phase to prevent deal stagnation *before* the crucial end of Q4.
-*   **Margin Integrity Alerts:** Deploy automated notifications for Sales Directors the very moment regional discounting behavior exceeds the established quarterly tolerance.
+- **CRM Integration:** Connect the Tableau workbook to a live CRM API endpoint to replace the CSV export cycle with continuous data refresh.
+- **Quota Attainment Overlay:** Add a Quota Pacing layer to project end-of-period attainment based on current pipeline velocity, not point-in-time snapshots.
+- **Predictive Win Score:** Integrate a lightweight ML win probability model into the pipeline view to surface at-risk deals displaying known Stage 2 stall patterns.
