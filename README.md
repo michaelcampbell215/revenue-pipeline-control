@@ -9,10 +9,6 @@
 
 ---
 
-> [!NOTE]
-> **Analytics Engineering Connection:** The core BI engineering patterns here — calculated field design, parameter-driven filtering, LOD expression architecture, and hierarchical drill-down — are directly transferable to healthcare revenue cycle analytics, payer reimbursement dashboards, and patient acquisition funnel reporting where stakeholders need to move from raw claims or EMR data to board-ready visual intelligence.
-
----
 
 ## The Problem
 
